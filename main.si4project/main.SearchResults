@@ -1,0 +1,10 @@
+---- cond_buzzer Matches (9 in 5 files) ----
+data_global.c line 10 : pthread_cond_t cond_buzzer;
+main.c line 17 : extern pthread_cond_t cond_buzzer;
+ReleaseResource in main.c : 	pthread_cond_destroy (&cond_buzzer);
+main in main.c : 	pthread_cond_init (&cond_buzzer, NULL);
+pthread_analysis.c line 40 : extern pthread_cond_t cond_buzzer;
+pthread_buzzer.c line 8 : extern pthread_cond_t cond_buzzer;
+pthread_buzzer in pthread_buzzer.c : 		pthread_cond_wait (&cond_buzzer, &mutex_buzzer);
+pthread_client_request.c line 12 : extern pthread_cond_t cond_buzzer;
+pthread_client_request in pthread_client_request.c : 				pthread_cond_signal (&cond_buzzer);
